@@ -20,13 +20,27 @@ class OnboardingBaseViewController: UIViewController {
     private lazy var bottomButtonStackView: UIStackView = {
         let buttonView = UIStackView()
         buttonView.distribution = .fillEqually
-        buttonView.spacing = 50
+        buttonView.spacing = AppConstants.appConstants_s50
         buttonView.addArrangedSubview(onboardingViewModel.leftButton)
         buttonView.addArrangedSubview(onboardingViewModel.rightButton)
         onboardingViewModel.leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
         onboardingViewModel.rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
         buttonView.translatesAutoresizingMaskIntoConstraints = false
         return buttonView
+    }()
+    
+    private lazy var onboardingContentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var onboardingScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
     }()
     
     init(screenDataView: OnboardingViewModel) {
@@ -40,37 +54,54 @@ class OnboardingBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = AppColorConstants.appBackgroundColor
         setupView()
     }
     
     func setupView() {
         // Image view
-        view.addSubview(imageCarouselView)
+        onboardingContentView.addSubview(imageCarouselView)
         
         // Label and sub-lable view
-        view.addSubview(descriptionStackView)
+        onboardingContentView.addSubview(descriptionStackView)
+        
+        onboardingScrollView.addSubview(onboardingContentView)
+        
+        view.addSubview(onboardingScrollView)
         
         // Bottom buttons
         view.addSubview(bottomButtonStackView)
-        
+
         setupConstraints()
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            imageCarouselView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            imageCarouselView.topAnchor.constraint(equalTo: view.topAnchor),
-            imageCarouselView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            onboardingScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            onboardingScrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            onboardingScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            onboardingScrollView.bottomAnchor.constraint(equalTo: bottomButtonStackView.topAnchor, constant: -AppConstants.appConstants_s10),
             
-            descriptionStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            descriptionStackView.topAnchor.constraint(equalTo: imageCarouselView.bottomAnchor, constant: 32),
-            descriptionStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            descriptionStackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomButtonStackView.topAnchor),
+            onboardingContentView.leadingAnchor.constraint(equalTo: onboardingScrollView.leadingAnchor),
+            onboardingContentView.topAnchor.constraint(equalTo: onboardingScrollView.topAnchor),
+            onboardingContentView.trailingAnchor.constraint(equalTo: onboardingScrollView.trailingAnchor),
+            onboardingContentView.bottomAnchor.constraint(equalTo: onboardingScrollView.bottomAnchor),
+            onboardingContentView.widthAnchor.constraint(equalTo: onboardingScrollView.widthAnchor),
             
-            bottomButtonStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            bottomButtonStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            bottomButtonStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            imageCarouselView.leadingAnchor.constraint(equalTo: onboardingContentView.leadingAnchor),
+            imageCarouselView.topAnchor.constraint(equalTo: onboardingContentView.topAnchor),
+            imageCarouselView.trailingAnchor.constraint(equalTo: onboardingContentView.trailingAnchor),
+            
+            descriptionStackView.leadingAnchor.constraint(equalTo: onboardingContentView.leadingAnchor, constant: AppConstants.appConstants_s16),
+            descriptionStackView.topAnchor.constraint(equalTo: imageCarouselView.bottomAnchor, constant: AppConstants.appConstants_s32),
+            descriptionStackView.trailingAnchor.constraint(equalTo: onboardingContentView.trailingAnchor, constant: -AppConstants.appConstants_s16),
+            descriptionStackView.bottomAnchor.constraint(lessThanOrEqualTo: onboardingContentView.bottomAnchor),
+            
+            bottomButtonStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: AppConstants.appConstants_s16),
+            bottomButtonStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -AppConstants.appConstants_s16),
+            bottomButtonStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -AppConstants.appConstants_s10),
+            
+            
         ])
     }
     

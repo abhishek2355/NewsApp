@@ -8,8 +8,8 @@ class OnboardingFirstViewController: OnboardingBaseViewController {
             imageURL: "DemoImage",
             titleLabel: "Stay Connected, Everywhere, Anytime",
             subTitleLabel: "Welcome to NewsApp, your ultimate destination for breaking news, exclusive stories, and tailored content.",
-            leftButton: BottomButtons(buttonText: "Skip", buttonColor: .clear, labelColor: UIColor(red: 76/255, green: 153/255, blue: 0/255, alpha: 1.0)),
-            rightButton: BottomButtons(buttonText: "Continue", buttonColor: UIColor(red: 76/255, green: 153/255, blue: 0/255, alpha: 1.0), labelColor: .white)
+            leftButton: BottomButtons(buttonText: "Skip", buttonColor: .clear, labelColor: AppColorConstants.buttonColor_Green),
+            rightButton: BottomButtons(buttonText: "Continue", buttonColor: AppColorConstants.buttonColor_Green, labelColor: .white)
         )
         super.init(screenDataView: self.onboardingFirstView)
     }

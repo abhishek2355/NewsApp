@@ -8,8 +8,8 @@ class OnboardingSecondViewController: OnboardingBaseViewController {
             imageURL: "DemoImage",
             titleLabel: "Become a Savvy Global Citizen",
             subTitleLabel: "Discover tailored news that aligns with your interests and preferences. Your personalized news journey awaits!",
-            leftButton: BottomButtons(buttonText: "Skip", buttonColor: .clear, labelColor: UIColor(red: 76/255, green: 153/255, blue: 0/255, alpha: 1.0)),
-            rightButton: BottomButtons(buttonText: "Continue", buttonColor: UIColor(red: 76/255, green: 153/255, blue: 0/255, alpha: 1.0), labelColor: .white)
+            leftButton: BottomButtons(buttonText: "Skip", buttonColor: .clear, labelColor: AppColorConstants.buttonColor_Green),
+            rightButton: BottomButtons(buttonText: "Continue", buttonColor: AppColorConstants.buttonColor_Green, labelColor: .white)
         )
         super.init(screenDataView: self.onboardingSecondView)
     }

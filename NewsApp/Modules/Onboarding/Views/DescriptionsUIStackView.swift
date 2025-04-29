@@ -8,7 +8,7 @@ class DescriptionsUIStackView: UIStackView {
         let label = UILabel()
         label.textColor = .black
         label.text = self.title
-        label.font = UIFont.boldSystemFont(ofSize: 35)
+        label.font = FontConstants.headingBold_H1_s32
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +19,7 @@ class DescriptionsUIStackView: UIStackView {
         let label = UILabel()
         label.textColor = .gray
         label.text = self.subTitle
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = FontConstants.subHeading_H1_s20
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,7 @@ class DescriptionsUIStackView: UIStackView {
     
     func setupLayout() {
         self.axis = .vertical
-        self.spacing = 10
+        self.spacing = AppConstants.appConstants_s10
         self.alignment = .center
         self.translatesAutoresizingMaskIntoConstraints = false
         

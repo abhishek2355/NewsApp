@@ -24,7 +24,7 @@ class ImageCarouselView: UIImageView {
             self.trailingAnchor.constraint(equalTo: trailingAnchor),
             self.topAnchor.constraint(equalTo: topAnchor),
             self.bottomAnchor.constraint(equalTo: bottomAnchor),
-            self.heightAnchor.constraint(equalToConstant: 450),
+            self.heightAnchor.constraint(equalToConstant: AppConstants.appConstants_s450),
         ])
     }
 }

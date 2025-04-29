@@ -21,11 +21,12 @@ class BottomButtons: UIButton {
     
     func setupButtonLayout() {
         self.setTitle(self.buttonLabel, for: .normal)
+        self.titleLabel?.font = FontConstants.subHeading_H1_s20
         self.setTitleColor(self.buttonLabelColor, for: .normal)
         self.backgroundColor = self.buttonBackgroundColor
-        self.layer.cornerRadius = 30
-        self.layer.borderColor = UIColor(red: 76/255, green: 153/255, blue: 0/255, alpha: 1.0).cgColor
-        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = AppConstants.appConstants_s30
+        self.layer.borderColor = AppColorConstants.buttonColor_Green.cgColor
+        self.layer.borderWidth = AppConstants.appConstants_s1
         self.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -33,7 +34,7 @@ class BottomButtons: UIButton {
             self.trailingAnchor.constraint(equalTo: trailingAnchor),
             self.topAnchor.constraint(equalTo: topAnchor),
             self.bottomAnchor.constraint(equalTo: bottomAnchor),
-            self.heightAnchor.constraint(equalToConstant: 60),
+            self.heightAnchor.constraint(equalToConstant: AppConstants.appConstants_s60),
         ])
     }
 }
