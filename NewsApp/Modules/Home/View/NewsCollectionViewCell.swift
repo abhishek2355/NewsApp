@@ -13,7 +13,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = FontConstants.headingBold_H2_s18
         label.numberOfLines = 2
         return label
     }()

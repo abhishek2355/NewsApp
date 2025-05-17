@@ -50,33 +50,12 @@ class DashboardViewController: UIViewController {
     func loadDummyNews() {
         newsItems = [
             NewsItem(
-                title: "iOS 18 Released! The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features",
+                title: "iOS 18 Released! The latest version of iOS brings incrediable new features.",
                 description: "The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features The latest version of iOS brings incrediable new features",
+                authersName: "Abhishek Raut",
+                dateTime: Date(),
                 imageName: "DemoImage"
             ),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
-            NewsItem(title: "iOS 18 Released!", description: "The latest version of iOS brings incrediable new features", imageName: "DemoImage"),
         ]
         newsCollectionView.reloadData()
     }
